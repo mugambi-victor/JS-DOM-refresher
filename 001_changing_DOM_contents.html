@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <p id="topic">JS array methods</p>
+  <p id="first-method">map</p>
+  <p id="second-method">filter</p>
+
+  <p id="parag">Key = <span style="display: none;">ABC123</span></p>
+  <script>
+    const topic= document.getElementById("topic")
+    /**
+     *  innerHtml is a method that allows us to read and update both the structure 
+     * and content and structure of elements.
+     */
+    // updating content 
+    topic.innerHTML = "Js refresher course"
+    // reading content
+    console.log(topic.innerHTML)
+    // updating structure. we sent font to bold for the first word
+    topic.innerHTML = "<b>Javascript</b> is a very interesting programming language"
+   /** 
+    * if working with text content use innertext and textContent. 
+    * These two methods ignore html tags and treat them as part of a string. you can use them to read or update 
+    * the text of DOM elements.
+    * The key difference between the two is that innertext retruns the text as it appears on the screen. And using
+    * textContent returns text as it appears in the markup. eg
+    */
+   const paragraph = document.querySelector('#parag')
+   // follows markup syntax
+   console.log("inspecting the paragraph using innertext", paragraph.innerText);
+   // ignores HTML Tags and treats them as text
+   console.log("inspecting the paragraph using textContent", paragraph.textContent);
+
+  </script>
+</body>
+</html>
