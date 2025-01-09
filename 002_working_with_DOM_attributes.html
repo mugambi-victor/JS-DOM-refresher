@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>
+        Html Attributes provide useful information about html elements. These Attributes are always included in the opening tag of the element. An Attribute is made up of a name and a value.
+    </p>
+    <p>
+        As the browser generates the DOM based in the HTML structure, it translates the attributes into dynamic properties of the DOM objects.
+    </p>
+    <h3>Example</h3>
+    <!-- here, type and id are attributes -->
+    <button id="myButton" type="submit" >Click Me</button>
+<img src="image.png" alt="" id="myImage">
+    <p>
+        To interact with attributes, use the method <b>getAttrribute</b> and <b>setAttribute</b> to directly access the properties. 
+    </p>
+    </div>
+
+    
+        <h3>The  <b>getAttribute</b> Method</h3>
+    <p>
+        <ul>
+            <li>As the name suggests, you can use this method to get the value of an existing attribute on an element</li>
+            <li>It accepts an argument(the name of the attribute) and returns the value of the attribute.  </li>
+        </ul>
+    </p>
+
+
+   
+        <h3>The <b>setAttribute</b> Method</h3>
+    <p>
+        This is used to <b>set</b> or <b>update</b> the attribute of an element. The method taked in two arguments. The first argument is <b>the name of the attribute</b> and the second attribute is the <b>new value you want to give the attribute </b>   
+        for example. in our script we will update the <b>src</b> attribute of out image to a randdom image generator instead of the current image.
+    </p>
+    
+
+    <div>
+        <h3>The <b>removeattribute</b> Method</h3>
+    <p>
+        Used to remove an existing attribute. eg we can remove the height attribute of our image
+    </p>
+
+    </div>
+    <div>
+        <h3>The <b>hasAttribute</b> Method</h3>
+    <p>
+        This is another useful method when manipulating the Dom to check if an element has a given attribute. The method returs <b>true</b> if the specified attribute exists and returns <b>false</b> 
+    </p>
+    <p>
+        For our example, we will be checking if our image has height and width attributes. Which we expect to be null so hasAttribute will return <b></b>
+    </p>
+    </div>
+    <script>
+        // the get attribute function
+        const myButton = document.getElementById('myButton')
+        const myImage = document.getElementById('myImage')
+        console.log('Button Type:', myButton.getAttribute('type')) // Output: submit
+        console.log('Button id:', myButton.getAttribute('id')) // Output: myButton
+        // get the src attribute
+        console.log(' getting the src attribute of my  img element', myImage.getAttribute('src')) // Output: image.png
+        // updating the src attribute of my img element
+        console.log(' updating the src attribute of my img element', myImage.setAttribute('src', "https://picsum.photos/200"))
+        // adding a new attribute(height) using setAttribute
+        console.log(' adding a new attribute using setAttribute', myImage.setAttribute('height', '400'))
+        console.log(' The height attribute before removing it is ', myImage.getAttribute('height'))
+         // removing a attribute using removeAttribute
+        console.log('removing the height attribute using removeAttribute', myImage.removeAttribute('height'))
+        console.log('The height attribute after removing it is ', myImage.getAttribute('height')) // Output: null
+
+        // checking if an element has a given attribute using hasAttribute
+        console.log('Checking if myImage has height attribute using hasAttribute', myImage.hasAttribute('height')) // Output: false
+        console.log('Checking if myImage has width attribute using hasAttribute', myImage.hasAttribute('width')) // Output: false
+         console.log('Checking if myImage has src attribute using hasAttribute', myImage.hasAttribute('src')) // Output: true
+    </script>
+</body>
+</html>
