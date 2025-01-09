@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        DOM manipulation using JavaScript: Styles
+    </h1>
+    <p>
+        There are two main ways of styling elements when working with JavaScript. You can either use the <b>.style</b> property or you can use <b>classes</b>
+    </p>
+
+    <div>
+        <h2>.style</h2>
+    <p>
+       You use the <b>.style</b> property when you want to make specific changes to a <b>single element</b>. The <b>.style</b> property allows you to set styles directly as inline styles for elements. <b>This means that it overrides the styles you have in your CSS stylesheet</b>
+    </p>
+    <p>
+        Using <b>.style</b> property, you get access to allows you to get access to all the individual CSS properties eg.
+        <!-- we want to get all css properties of this h1 using js -->
+         <h1 id="myheader">Styling elements with JavaScript</h1>
+    </p>
+    </div>
+<div>
+    <h2>
+        Setting Styles with classes
+    </h2>
+    <p>
+        With classes, you can create styles once and apply it to different elements. This helps your code become more maintainable
+    </p>
+    <h3>
+        The <b>className</b> Property
+    </h3>
+    <p>
+        The clasName property represents the class attribute of a DoM element. And you can use it to get or the the valu of the class attribute.
+    </p>
+    <p>
+        Example:
+        <p class = "testclass food" id="testcase">
+            I like rice.
+        </p>
+    </p>
+<h3>The <b>classList</b> Property</h3>
+    <p>
+        To add a new class instead of replacing the existing class, we use the <b>classList</b> property. With the <b>classList</b> property, you can add and remove classes. You can also <b>toggle</b>, <b>replace existing</b> class values with new ones, and even check if a class contains a specific value.
+    </p>
+    <p>
+        Example:
+        <p class = "test2 " id="test2">
+            I like rice.
+        </p>
+    </p>
+    <p>
+        Useful method
+        <ul>
+            <li>
+                <b>classList.add()</b> adds classes to an element
+            </li>
+            <li>
+                <b>classList.remove()</b> removes classes from an element
+            </li>
+            <li>
+                <b>classList.toggle()</b> adds or removes a class from an element
+            </li>
+            <li>
+                <b>classList.contains()</b> checks if an element has a specific class. returns true or false
+            </li>
+            <li>
+                <b>classList.replace()</b> replaces an existing class with a new one
+            </li>
+        </ul>
+    </p>
+</div>
+    <script>
+        const header = document.getElementById('myheader')
+        //to see all header css style declarations
+        // console.log(header.style)
+        // set background-color to green and font color to white and a padding of 10 px
+        header.style.backgroundColor = 'green'
+        header.style.color = 'white'
+        header.style.padding = '10px'
+
+
+        // classes to update styles
+        const foodElement = document.querySelector('#testcase')
+        console.log(foodElement.className)
+        // this replaces the classes that existed before
+        foodElement.className = 'favorite'
+        // now the foodElement only has the favorite class
+        console.log(foodElement.className)
+        // classList property
+        const test2 = document.querySelector('#test2')
+        //Adding classes with classList property
+        test2.classList.add('maindish', 'tasty')
+        console.log(test2.classList)
+
+        // removing classes with classList property
+        test2.classList.remove('maindish')
+        console.log(test2.classList)
+
+        // replacing classes with classList property
+        test2.classList.replace('tasty', 'topshota')
+        console.log(test2.classList)
+
+        // checking presence of a class with classList.contains()
+
+        const test3 = test2.classList.contains('topshota')
+        console.log('test2 containes topshota', test3)
+        const test4 = test2.classList.contains('isAuthenticated')
+        console.log('test2 containes isAuthenticated', test4)
+
+        // toggling a class with classList.toggle()
+        // adds wasntme class since it was not there initially
+        test2.classList.toggle('wasntme')
+        console.log(test2.classList)
+        // removes wasntme class since it was toggled
+        test2.classList.toggle('wasntme')
+        console.log(test2.classList)
+
+    </script>
+</body>
+</html>
