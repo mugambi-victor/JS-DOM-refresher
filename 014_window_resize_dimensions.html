@@ -1,0 +1,35 @@
+<!-- Declaration of HTML document type -->
+<!DOCTYPE html>
+<!-- Start of HTML document -->
+<html>
+<!-- Start of head section -->
+<head>
+<!-- Declaring character encoding -->
+<meta charset=utf-8 />
+<!-- Setting title of the document -->
+<title>Window Size : height and width</title>
+<!-- End of head section -->
+</head>
+<!-- Comment indicating to resize the window and see the result -->
+<!-- Resize the window (here output panel) and see the result !-->
+<!-- Start of body section with onload and onresize events -->
+<body onload="getSize()" onresize="getSize()">
+<!-- Division to display height and width size -->
+<div id="wh"> 
+    <!-- Place height and width size here! --> 
+
+</div>
+<!-- End of body section -->
+
+ <script>
+    function getSize(){
+        let w = document.documentElement.clientWidth
+        let h = document.documentElement.clientHeight
+
+        // Displaying height and width size in the div
+        document.getElementById('wh').innerHTML = 'Height: ' + h + 'px' + 'Width: ' + w + 'px';
+    }
+ </script>
+</body>
+<!-- End of HTML document -->
+</html>
